@@ -33,11 +33,43 @@ class SQL_Functions {
   static Future<List<Map>> checkUserExist(String email, String pwd) async {
     var db = await SQL_Functions.openOrCreateDb(); // to open database
     final data = await db.rawQuery(
-        "SELECT * FROM userdata WHERE email = $email AND password = $pwd");
+        "SELECT * FROM userdata WHERE email = '$email' AND password = '$pwd' ");
     if (data.isEmpty) {
       return data;
     } else {
       return data;
     }
+  }
+
+//to check the user is already registered
+  static Future<List<Map>> checkUserAlreadyRegister(String email) async {
+    var db = await SQL_Functions.openOrCreateDb(); // to open database
+    final user =
+        await db.rawQuery("SELECT * FROM userdata WHERE email = '$email' ");
+    if (user.isNotEmpty) {
+      return user;
+    } else {
+      return user;
+    }
+  }
+
+// to read all the users form the db
+  static Future<List<Map<String, dynamic>>> getAllUsers() async {
+    var db = await SQL_Functions.openOrCreateDb(); //to open database
+    final allusers = await db.rawQuery("SELECT * FROM userdata");
+    return allusers;
+  }
+
+  // to delete a user
+  static Future<void> toDeleteuser(int id) async {
+    var db = await SQL_Functions.openOrCreateDb(); // to open database
+    db.delete("userdata", where: "id = ?", whereArgs: [id]); // in whereargs = value from the admin page ,here it is id
+  }
+
+  static Future<int> toUpdate(int id, String uname, String uemail) async {
+    var db = await SQL_Functions.openOrCreateDb();
+    final newdata = {"name": uname, "email": uemail};
+    final newid = await db.update("userdata", newdata,where: "id = ?", whereArgs: [id]);
+    return newid;
   }
 }

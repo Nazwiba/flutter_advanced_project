@@ -21,7 +21,8 @@ class SqLogin extends StatelessWidget {
         var data = await SQL_Functions.checkUserExist(email, pwd);
         if (data.isNotEmpty) {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => UserHome(data: data)));
+              context, MaterialPageRoute(
+                builder: (context) => UserHome(data: data))); //Userhome(data: data) is passing data
         }
       }
     }
