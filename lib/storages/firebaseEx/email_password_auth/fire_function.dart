@@ -36,7 +36,7 @@ class FireBaseHelper {
     }
   }
 
-  ///signOut
+  ///SignOut
   Future<void> logout() async{
    await auth.signOut();
   }

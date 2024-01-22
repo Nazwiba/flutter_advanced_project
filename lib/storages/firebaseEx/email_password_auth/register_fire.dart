@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_project/storages/firebase/email_password_auth/fire_function.dart';
-import 'package:flutter_advanced_project/storages/firebase/email_password_auth/login_fire.dart';
+import 'package:flutter_advanced_project/storages/firebaseEx/email_password_auth/fire_function.dart';
+import 'package:flutter_advanced_project/storages/firebaseEx/email_password_auth/login_fire.dart';
 
 class Register_Fire extends StatefulWidget {
   @override

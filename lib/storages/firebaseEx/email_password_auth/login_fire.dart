@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_project/storages/firebase/email_password_auth/register_fire.dart';
+import 'package:flutter_advanced_project/storages/firebaseEx/email_password_auth/register_fire.dart';
 import 'fire_function.dart';
 import 'home_fire.dart';
 
@@ -9,10 +9,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyBnOUuyX1k1DLl7FyaU8gFj_CH6Evp9iZk",
-          appId: "1:526881800339:android:a4ad1898b85bf2605c0d66",
+          apiKey:"AIzaSyByMetb4ocZ0vI3JzuuGMWZuyJp7FyW5gc",
+          appId: "1:54867206801:android:0b540e26ee839d037c9530",
           messagingSenderId: "",
-          projectId: "healthy-reason-330908"));
+          projectId: "fir-newoperations"));
   User? user = FirebaseAuth.instance.currentUser;
   runApp(MaterialApp(
     home: user == null ? Login_Fire() : Home_Fire(),
