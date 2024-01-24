@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_project/statemanagement/using_multi_provider/provider/auth_provider.dart';
-import 'package:flutter_advanced_project/statemanagement/using_multi_provider/provider/counter_provider.dart';
+import 'package:flutter_advanced_project/statemanagement/statemanagement_using_provider/using_multi_provider/provider/auth_provider.dart';
+import 'package:flutter_advanced_project/statemanagement/statemanagement_using_provider/using_multi_provider/provider/counter_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
