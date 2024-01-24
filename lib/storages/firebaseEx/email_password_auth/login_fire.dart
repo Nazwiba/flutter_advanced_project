@@ -15,7 +15,7 @@ void main() async {
           projectId: "fir-newoperations"));
   User? user = FirebaseAuth.instance.currentUser;
   runApp(MaterialApp(
-    home: user == null ? Login_Fire() : Home_Fire(),
+    home: user == null ? Login_Fire() : const Home_Fire(),
   ));
 }
 

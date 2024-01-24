@@ -68,7 +68,8 @@ class _FireImgStorageState extends State<FireImgStorage> {
                                 title: Text(image["uploaded By"]),
                                 subtitle: Text(image["time"]),
                                 trailing: IconButton(
-                                    onPressed: () => deleteMedia(image["path"]), icon: const Icon(Icons.delete)),
+                                    onPressed: () => deleteMedia(image["path"]),
+                                    icon: const Icon(Icons.delete)),
                               ),
                             );
                           });
@@ -121,11 +122,14 @@ class _FireImgStorageState extends State<FireImgStorage> {
         "imageurl": fileUrl,
         "path": singleFile.fullPath,
         "uploaded By": metadata.customMetadata?["uploaded By"] ?? "NoData",
-        "time": metadata.customMetadata?["time"] ?? "No Time Found",
+        "time": metadata.customMetadata?["time"] ?? "${metadata.timeCreated}",
       });
     });
     return images;
   }
-  
-  deleteMedia(image) {}
+
+  Future<void> deleteMedia(String imagePath) async {
+    await storage.ref(imagePath).delete();
+    setState(() {});
+  }
 }

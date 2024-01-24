@@ -46,6 +46,7 @@ dependencies:
   firebase_storage: ^11.6.0             #to store images videos audios etc
   image_picker: ^1.0.7                  #to fetch images from cam or gallery
   path: ^1.8.3                          #to fetch the sysytem path of
+  permission_handler: ^11.2.0
 
 dev_dependencies:
   flutter_test:
