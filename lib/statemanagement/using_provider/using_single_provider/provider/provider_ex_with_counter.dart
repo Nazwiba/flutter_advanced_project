@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_project/statemanagement/statemanagement_using_provider/using_single_provider/provider/controller/counter_controller.dart';
+import 'package:flutter_advanced_project/statemanagement/using_provider/using_single_provider/provider/controller/counter_controller.dart';
 import 'package:provider/provider.dart';
 
 void main() {
